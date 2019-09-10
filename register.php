@@ -1,5 +1,5 @@
+<?php include('server.php');?>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,8 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <form action="" method="POST">
+            <form action="register.php" method="POST">
+                <?php include('errors.php');?>
                 <br>
                 <div class="form-group text-center">
                     <h1 class="display-4">Cadastro de Usuário</h1>
