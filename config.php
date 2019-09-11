@@ -23,9 +23,9 @@
     if(($_POST['pwd']) != ($_POST['pwd2'])){
         die('As senhas estão diferentes.');
     }
-    // if(strlen($_POST['pwd'])>16 || strlen($_POST['username']) < 8){
-    //     die('A senha deve conter no mínimo 8 e no máximo 16 caracteres.');
-    // }
+    if(strlen($_POST['pwd'])>16 || strlen($_POST['pwd']) < 8){
+        die('A senha deve conter no mínimo 8 e no máximo 16 caracteres.');
+    }
 
     if($stmt = $c->prepare('SELECT id, pwd FROM userdata WHERE username = ?')){
         $stmt->bind_param('s', $_POST['username']);
