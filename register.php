@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container container-fluid">
         <div class="row justify-content-center">
             <form action="register.php" method="POST">
                 <br>
@@ -32,6 +32,10 @@
                 <div class="form-group">
                     <label for="username">Nome de Usuário:</label>
                     <input type="text" name="username" id="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Senha:</label>
