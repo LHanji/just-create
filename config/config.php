@@ -1,6 +1,6 @@
 <?php
     $DATABASE_NAME = 'registration';
-    $DATABASE_PWD = '';
+    $DATABASE_PWD = null;
     $USERNAME = 'root';
     $SERVER = 'localhost';
     $c = mysqli_connect($SERVER, $USERNAME, $DATABASE_PWD, $DATABASE_NAME);
