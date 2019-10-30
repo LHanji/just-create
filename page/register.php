@@ -35,7 +35,7 @@
             </div>
             <button type="submit" class="btn btn-primary" name="regBtn">Cadastrar-se</button>
             <br><br>
-            <p>Já possui conta?<a href="login.php"> Faça login</a></p>';
+            <p>Já possui conta?<a href="login_form.php"> Faça login</a></p>';
     }    
 
     include '../template/template_form.php';

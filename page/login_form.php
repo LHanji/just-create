@@ -1,25 +1,35 @@
+<?php
+    session_start();
+    $error = $_SESSION["error"];
+?>
+<html>
 
-<br>
-<html lang="en">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php title(); ?></title>
+    <title>Login</title>
 </head>
+
 <body>
     <div class="container mt-4">
-        <div class="row justify-content-center">
+    <div class="row justify-content-center">
             <div class="col-">    
-                <?php heading(); ?>
+                <p class="h1">Login</p>
             </div>
         </div>
         <div class="col-">
-            <form action="<?php page(); ?>" method="post" autocomplete="off">
-                <?php form_content(); ?>
+            <form method="post" action="../script/server.php">
+                <div class="form-group">
+                    <label for="username">Usuário: </label>
+                    <input type="text" name="username" id="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha: </label>
+                    <input type="password" name="pwd" id="pwd" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary" name="logBtn" id="logBtn">Entrar</button>
+                <br><br>
+                <p>Não possui conta?<a href="register.php"> Cadastre-se</a></p>
             </form>
-            <?php error(); ?>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
