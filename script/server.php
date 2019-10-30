@@ -5,7 +5,10 @@
     $username = 'root';
     $dbpassword = '';
     $dbname = 'just_create';
+    //$username = 'aluno';
+    //$dbpassword = 'aluno';
 
+    
     //creating connection
     $connection = mysqli_connect($host, $username, $dbpassword, $dbname);
     // check connection
@@ -20,6 +23,7 @@
         $username = $_POST['username'];
         $email = $_POST['email'];
         $usrpassword = $_POST['pwd'];
+        $hashedpwd = password_hash($usrpassword, PASSWORD_DEFAULT);
     
         //check informations
         if((empty($fname) == true) || (empty($username) == true) || (empty($email) == true) || (empty($usrpassword) == true)){
@@ -39,7 +43,7 @@
         }
     
         //insert data into table
-        $sql = "INSERT INTO userdata (name, username, email, password) VALUES ('$fname', '$username', '$email', ENCRYPT('$usrpassword'))";
+        $sql = "INSERT INTO userdata (name, username, email, password) VALUES ('$fname', '$username', '$email', '$hashedpwd')";
     
         if (mysqli_query($connection, $sql)) {
             header('location: ../page/login_form.php');
@@ -53,13 +57,21 @@
         if((empty($username) == true) || (empty($usrpassword) == true)){
             die ("Você precisa preencher todos os campos.");
         }
-        $query_find_username = "SELECT * FROM userdata WHERE username = '$username' and password = $usrpassword";
+        $query_find_username = "SELECT username, password FROM userdata WHERE username = '$username'";
         $result_find_username = mysqli_query($connection, $query_find_username);
         session_start();
         if(empty($result_find_username) == false){
-            $_SESSION["username"] = $username;
-            $_SESSION["error"] == null;
-            header("location: ../page/just_create_mainpage.php");
+            while($row = mysqli_fetch_assoc($result_find_username)){
+                $hashedpwd = $row['password'];
+                if(password_verify($usrpassword, $hashedpwd) == true){
+                    $_SESSION["username"] = $username;
+                    $_SESSION["error"] == null;
+                    header("location: ../page/just_create_mainpage.php");
+                } else{
+                    $_SESSION["error"] = "Senha incorreta.";
+                    header("location: ../page/login_form.php");
+                }
+            }
         } else{
             $_SESSION["error"] = "Senha ou nome de usuário errados.";
             header("location: ../page/login_form.php");

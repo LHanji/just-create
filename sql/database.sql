@@ -5,7 +5,7 @@ create table userdata(
     name varchar(20) not null,
     username varchar(20) not null,
     email varchar(50) not null,
-    password varchar(16) not null
+    password varchar(255) not null
 );
 
 create table chardata(

@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="col-">
-            <form method="post" action="../script/server.php">
+            <form method="post" action="../script/server.php" autocomplete="off">
                 <div class="form-group">
                     <label for="username">Usuário: </label>
                     <input type="text" name="username" id="username" class="form-control">
