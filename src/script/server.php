@@ -2,11 +2,11 @@
 
     //connection variables
     $host = 'localhost';
-    //$username = 'root';
-    //$dbpassword = '';
-    $dbname = 'just_create';
-    $username = 'aluno';
-    $dbpassword = 'aluno';
+    $username = 'root';
+    $dbpassword = '';
+    $dbname = 'maluves';
+    //$username = 'aluno';
+    //$dbpassword = 'aluno';
 
     
     //creating connection

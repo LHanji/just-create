@@ -1,6 +1,6 @@
-create database just_create;
+create database maluves;
 
-use just_create;
+use maluves;
 
 create table userdata(
     id int(22) primary key auto_increment,

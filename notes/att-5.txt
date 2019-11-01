@@ -1,0 +1,9 @@
+Resolver(){
+    Sistema de criar e salvar personangem não está funcionando;
+}
+
+Criar(){
+    Layout para definir como os cards dos personagens irão aparecer na mainpage;
+    Sistema de uploud de imagens para usar como representação dos personagens criados;
+    Logo para o Site;
+}

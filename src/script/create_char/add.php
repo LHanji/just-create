@@ -21,7 +21,7 @@
     $host = 'localhost';
     $username = 'root';
     $dbpassword = '';
-    $dbname = 'just_create';
+    $dbname = 'maluves';
  
     $connection = mysqli_connect($host, $username, $dbpassword, $dbname);
  

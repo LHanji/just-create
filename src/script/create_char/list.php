@@ -3,7 +3,7 @@
     $host = 'localhost';
     $username = 'root';
     $dbpassword = '';
-    $dbname = 'just_create';
+    $dbname = 'maluves';
  
     $connection = mysqli_connect($host,$username,$dbpassword, $dbname);
  
@@ -28,10 +28,10 @@
     {
         while($char)
         {
-            echo'<div class="row justify-content-center">
-                    <div class="col-"> 
-                        <div class="card" style="width: 17rem;">
-                            <div class="card-body">
+            echo"<div class=\"row justify-content-center\">
+                    <div class=\"col-\"> 
+                        <div class=\"card\" style=\"width: 17rem;\">
+                            <div class=\"card-body\">
                                 <p><b>{$char["id"]}</b><br></p>
                                 <p><b>{$char["char_name"]}</b><br></p>
                                 <p><b>{$char["char_codename"]}</b><br></p>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                </div>';
+                </div>";
             echo "<a href=\"att.php?id={$char["id"]}\">Editar</a>";
             echo " | ";
             echo "<a href=\"delete.php?id={$char["id"]}\">Remover</a>";
@@ -56,7 +56,7 @@
     {
         echo "tabela vazia";
     }
-    echo "<a href=\"add.php\">Inclui</a>";
+    echo "<a href=\"../../script/create_char/add.php\">Inclui</a>";
  
     mysqli_free_result($queryResult);
     mysqli_close($connection);
