@@ -11,13 +11,9 @@ create table userdata(
 );
 
 create table chardata(
-    id int(22) primary key auto_increment,
+    id int primary key auto_increment,
     char_name varchar(20) not null,
-    char_codename varchar(20),
-    char_class varchar(20),
     char_race varchar(20),
     char_skills varchar(255),
-    char_weapons varchar(255),
-    char_origin varchar(20),
     char_story varchar(255)
 );

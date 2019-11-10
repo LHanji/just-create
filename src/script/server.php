@@ -16,7 +16,6 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-
     //edit 1: put all this process within an if that tells this is the register form
     if(isset($_POST['regBtn'])){
         $fname = $_POST['name'];
@@ -77,6 +76,22 @@
             header("location: ../page/login.php");
         }
     }
+
+    /* if(isset($_POST['addChar'])){
+        $char_name = $_POST['char_name'];
+        $char_race = $_POST['char_race'];
+        $char_skills = $_POST['char_skills'];
+        $char_story = $_POST['char_story'];
+
+        $query_addChar = "INSERT INTO chardata(char_name, char_race, char_skills, char_story) VALUES ('$char_name', '$char_race', '$char_skills', '$char_story')";
+        mysqli_query($connection, $query_addChar);
+    }
+
+    if(isset($_GET['delete'])){
+        $id = $_GET['delete'];
+        mysqli_query($connection, "DELETE FROM chardata WHERE id='$id'") or die("Não deu pra deletar");
+        header("location: ../page/create_char.php");
+    } */
 
     //close connection
     mysqli_close($connection);

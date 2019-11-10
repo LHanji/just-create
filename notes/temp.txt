@@ -1,0 +1,17 @@
+<tr>
+                        <td>
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    $char_name
+                                </div>
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title">$char_name</h5> -->
+                                    <p class="card-text">Raça: $char_race</p>
+                                    <p class="card-text">Habilidades: $char_skills</p>
+                                    <p class="card-text">História: $char_story</p>
+                                    <a href="creat_char.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Editar</a>
+                                    <a href="../script/server.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Remover</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>

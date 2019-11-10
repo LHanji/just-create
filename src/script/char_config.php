@@ -1,0 +1,49 @@
+<?php
+    //connection variables
+    $host = 'localhost';
+    $username = 'root';
+    $dbpassword = '';
+    $dbname = 'maluves';
+    //$username = 'aluno';
+    //$dbpassword = 'aluno';
+
+    
+    //creating connection
+    $connection = mysqli_connect($host, $username, $dbpassword, $dbname);
+    // check connection
+    if (!$connection) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    if(isset($_POST['addChar'])){
+        $char_name = $_POST['char_name'];
+        $char_race = $_POST['char_race'];
+        $char_skills = $_POST['char_skills'];
+        $char_story = $_POST['char_story'];
+
+        $query_addChar = "INSERT INTO chardata(char_name, char_race, char_skills, char_story) VALUES ('$char_name', '$char_race', '$char_skills', '$char_story')";
+        mysqli_query($connection, $query_addChar);
+
+        header("location: ../page/create_char.php");
+    }
+
+    if(isset($_GET['delete'])){
+        $id = $_GET['delete'];
+        mysqli_query($connection, "DELETE FROM chardata WHERE id='$id'") or die(mysqli_error($connection));
+
+        header("location: ../page/create_char.php");
+    }
+    
+    if(isset($_GET['edit'])){
+        $id = $_GET['id'];
+        $result = mysqli_query($connection, "SELECT * FROM chardata WHERE id='$id'") or die(mysqli_error($connection));
+        if(count($result) == 1){
+            $row = mysqli_fetch_array($result);
+            $char_name = $row['char_name'];
+            $char_race = $row['char_race'];
+            $char_skills = $row['char_skills'];
+            $char_story = $row['char_story'];
+        }
+    }
+
+?>
