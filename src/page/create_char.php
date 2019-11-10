@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <?php require_once '../script/char_config.php';?>
     <div class="container mt-4">
         <div class="">
             <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
@@ -33,13 +34,14 @@
                     </div>
                     <br>
                     <form action="../script/char_config.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <div class="row justify-content-center">
                             <div class="col-">
                                 <div class="card" style="width: 17rem;">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="char_name">Nome: </label>
-                                            <input type="text" name="char_name" id="char_name" class="form-control">
+                                            <input type="text" name="char_name" id="char_name" value="<?php echo $char_name; ?>" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +51,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="char_race">Raça: </label>
-                                            <input type="text" name="char_race" id="char_race" class="form-control">
+                                            <input type="text" name="char_race" id="char_race" value="<?php echo $char_race; ?>" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +63,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="char_skills">Habilidades: </label>
-                                            <textarea style="height: 15rem;" name="char_skills" id="char_skills" class="form-control"></textarea>
+                                            <textarea type="text" style="height: 15rem;" name="char_skills" id="char_skills"  class="form-control"><?php echo $char_skills; ?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +73,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="char_story">História: </label>
-                                            <textarea style="height: 15rem;" name="char_story" id="char_story" class="form-control noresize"></textarea>
+                                            <textarea type="text" style="height: 15rem;" name="char_story" id="char_story" class="form-control"><?php echo $char_story; ?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +81,14 @@
                         </div>
                         <br>
                         <div class="row  justify-content-center">
+                        <?php 
+                            if($update == true):    
+                        ?>
+                            <button type="submit" class="btn btn-primary col-sm-5" name="update">Editar</button>
+                        <?php else: ?>
                             <button type="submit" class="btn btn-primary col-sm-5" name="addChar">Criar</button>
+                        <?php endif; ?>
+                        
                         </div>
                     </form>
                 </div>
