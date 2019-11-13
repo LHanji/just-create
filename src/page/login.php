@@ -15,7 +15,7 @@
     <div class="container mt-4">
     <div class="row justify-content-center">
             <div class="col-">    
-                <p class="h1">Login</p>
+                <h1 class="display-4">Login</h1>
             </div>
         </div>
         <div class="col-">
