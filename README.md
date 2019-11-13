@@ -1,8 +1,6 @@
 # maluves
 
-EM ANDAMENTO...
-
-Este é um projeto de um site em que, tendo criado uma conta e feito login, o usuário poderá adicionar a uma biblioteca suas criações, seus personagens. Com isso você pode deixar guardado o que vem na mente naqueles momentos de explosão criativa, guardar suas criações.
+Maluves é um projeto de um site em que, tendo criado uma conta e feito login, o usuário poderá adicionar a uma biblioteca suas criações, seus personagens. Com isso você pode deixar guardado o que vem na mente naqueles momentos de explosão criativa, guardar suas criações.
 
 Na criação será possível adicionar atributos como nome, raça, habilidades e história.
 
