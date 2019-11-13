@@ -32,7 +32,7 @@
                             <p class=\"card-text\">Raça: {$row["char_race"]}</p>
                             <p class=\"card-text\">Habilidades: {$row["char_skills"]}</p>
                             <p class=\"card-text\">História: {$row["char_story"]}</p>
-                            <a href=\"create_char.php?edit={$row["id"]}\" class=\"btn btn-info\">Editar</a>
+                            <a href=\"maluves.php?edit={$row["id"]}#addoredit\" class=\"btn btn-info\">Editar</a>
                             <a href=\"../script/char_config.php?delete={$row["id"]}\" class=\"btn btn-danger\">Remover</a>
                         </div>
                     </div>

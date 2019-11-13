@@ -64,10 +64,12 @@
                 $hashedpwd = $row['password'];
                 if(password_verify($usrpassword, $hashedpwd) == true){
                     $_SESSION["username"] = $username;
-                    $_SESSION["error"] == null;
+                    $_SESSION["error"] = null;
+                    $_SESSION["logado"] = true;
                     header("location: ../page/maluves.php");
                 } else{
                     $_SESSION["error"] = "Senha incorreta.";
+                    $_SESSION["logado"] = false;
                     header("location: ../page/login.php");
                 }
             }
